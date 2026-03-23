@@ -1,5 +1,7 @@
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../../../core/common/constants/imagepath.dart';
 import '../../../core/common/style/global_text_style.dart';
 
@@ -106,10 +108,15 @@ class Onboarding3 extends StatelessWidget {
                   Positioned(
                     bottom: 50.h,
                     right: 16.w,
-                    child: const Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
-                      size: 28,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed(AppRoute.onboarding4);
+                      },
+                      child: const Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                        size: 28,
+                      ),
                     ),
                   ),
                 ],

@@ -1,32 +1,35 @@
-import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String buttonText;
+  final Color? buttonColor;
   final double? fontSize;
   final VoidCallback onTap;
   final double? buttonWidth;
-  final List<Color>? gradientColor;
   const CustomPrimaryButton({
     super.key,
     required this.buttonText,
     required this.onTap,
     this.fontSize,
     this.buttonWidth,
-    this.gradientColor,
+    this.buttonColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.buttonBackgroundColor,
         borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: buttonColor == Colors.transparent
+              ? Colors.white
+              : Colors.transparent,
+        ),
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.buttonBackgroundColor,
+          backgroundColor: buttonColor,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           minimumSize: const Size(double.infinity, 52),
