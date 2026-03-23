@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import '../../../core/common/constants/imagepath.dart';
 import '../../../core/common/style/global_text_style.dart';
 
-class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+class Onboarding2 extends StatelessWidget {
+  const Onboarding2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class Onboarding1 extends StatelessWidget {
                   right: 0,
                   height: height * 0.6,
                   child: Image.asset(
-                    Imagepath.onboarding1Image,
+                    Imagepath.onboarding2Image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -54,7 +54,7 @@ class Onboarding1 extends StatelessWidget {
                             children: [
                               SizedBox(height: 63.h),
                               Text(
-                                "Craving Something\nDelicious?",
+                                "Order in Seconds",
                                 textAlign: TextAlign.center,
                                 style: getHeadingTextStyle(
                                   fontsize: 26,
@@ -63,7 +63,7 @@ class Onboarding1 extends StatelessWidget {
                               ),
                               SizedBox(height: 12.h),
                               Text(
-                                "Explore freshly prepared meals from our kitchen and order your favourites in just a few taps.",
+                                "Browse the menu, customize your meal, and place your order quickly and effortlessly.",
                                 textAlign: TextAlign.center,
                                 style: getNormalTextStyle().copyWith(
                                   color: Colors.grey,
@@ -81,7 +81,7 @@ class Onboarding1 extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Row(
-                                  children: [dot(true), dot(false), dot(false)],
+                                  children: [dot(false), dot(true), dot(false)],
                                 ),
                               ],
                             ),
@@ -110,7 +110,7 @@ class Onboarding1 extends StatelessWidget {
                     right: 16.w,
                     child: GestureDetector(
                       onTap: () {
-                        Get.toNamed(AppRoute.onboarding2);
+                        Get.toNamed(AppRoute.onboarding3);
                       },
                       child: const Icon(
                         Icons.arrow_forward,

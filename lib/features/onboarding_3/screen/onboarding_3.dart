@@ -1,12 +1,10 @@
-import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import '../../../core/common/constants/imagepath.dart';
 import '../../../core/common/style/global_text_style.dart';
 
-class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+class Onboarding3 extends StatelessWidget {
+  const Onboarding3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class Onboarding1 extends StatelessWidget {
                   right: 0,
                   height: height * 0.6,
                   child: Image.asset(
-                    Imagepath.onboarding1Image,
+                    Imagepath.onboarding3Image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -54,7 +52,7 @@ class Onboarding1 extends StatelessWidget {
                             children: [
                               SizedBox(height: 63.h),
                               Text(
-                                "Craving Something\nDelicious?",
+                                "Delivered Fresh to Your Door",
                                 textAlign: TextAlign.center,
                                 style: getHeadingTextStyle(
                                   fontsize: 26,
@@ -63,7 +61,7 @@ class Onboarding1 extends StatelessWidget {
                               ),
                               SizedBox(height: 12.h),
                               Text(
-                                "Explore freshly prepared meals from our kitchen and order your favourites in just a few taps.",
+                                "We prepare your food with care and deliver it hot and fresh, right on time.",
                                 textAlign: TextAlign.center,
                                 style: getNormalTextStyle().copyWith(
                                   color: Colors.grey,
@@ -81,7 +79,7 @@ class Onboarding1 extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Row(
-                                  children: [dot(true), dot(false), dot(false)],
+                                  children: [dot(false), dot(false), dot(true)],
                                 ),
                               ],
                             ),
@@ -108,15 +106,10 @@ class Onboarding1 extends StatelessWidget {
                   Positioned(
                     bottom: 50.h,
                     right: 16.w,
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.toNamed(AppRoute.onboarding2);
-                      },
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                        size: 28,
-                      ),
+                    child: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 28,
                     ),
                   ),
                 ],
