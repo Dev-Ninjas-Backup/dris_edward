@@ -2,7 +2,9 @@ import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/imagepath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Onboarding4 extends StatelessWidget {
   const Onboarding4({super.key});
@@ -39,7 +41,9 @@ class Onboarding4 extends StatelessWidget {
               CustomPrimaryButton(
                 buttonText: "Login or Signup",
                 buttonColor: AppColors.buttonBackgroundColor,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoute.loginScreen);
+                },
               ),
               SizedBox(height: 11),
               CustomPrimaryButton(
