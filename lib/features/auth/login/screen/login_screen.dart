@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                   buttonText: "Sign In",
                   buttonColor: AppColors.buttonBackgroundColor,
                   onTap: () {
-                    // loginController.login();
+                    loginController.login();
                   },
                 ),
                 const SizedBox(height: 40),

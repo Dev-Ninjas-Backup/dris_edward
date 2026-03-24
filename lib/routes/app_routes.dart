@@ -3,6 +3,7 @@ import 'package:dris_edward/features/auth/login/screen/login_screen.dart';
 import 'package:dris_edward/features/auth/reset_password/screen/reset_password_screen.dart';
 import 'package:dris_edward/features/auth/signup/screen/signup_screen.dart';
 import 'package:dris_edward/features/auth/verification/screen/verification_screen.dart';
+import 'package:dris_edward/features/bottom_navbar/screen/bottom_navbar_screen.dart';
 import 'package:dris_edward/features/onboarding_1/screen/onboarding_1.dart';
 import 'package:dris_edward/features/onboarding_2/screen/onboarding_2.dart';
 import 'package:dris_edward/features/onboarding_3/screen/onboarding_3.dart';
@@ -23,6 +24,7 @@ class AppRoute {
   static String resetPasswordScreen = '/resetPasswordScreen';
   static String verificationScreen = '/verificationScreen';
   static String createNewPasswordScreen = '/createNewPasswordScreen';
+  static String bottomNavbarScreen = '/bottomNavbarScreen';
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
   static String getOnboarding2() => onboarding2;
@@ -33,6 +35,7 @@ class AppRoute {
   static String getResetPasswordScreen() => resetPasswordScreen;
   static String getVerificationScreen() => verificationScreen;
   static String getCreateNewPasswordScreen() => createNewPasswordScreen;
+  static String getBottomNavbarScreen() => bottomNavbarScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -48,5 +51,6 @@ class AppRoute {
       name: createNewPasswordScreen,
       page: () => CreateNewPasswordScreen(),
     ),
+    GetPage(name: bottomNavbarScreen, page: () => NavBarScreen()),
   ];
 }
