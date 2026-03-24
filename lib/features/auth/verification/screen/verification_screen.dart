@@ -4,6 +4,7 @@ import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
 import 'package:dris_edward/core/common/widgets/custom_secondary_button.dart';
 import 'package:dris_edward/features/auth/verification/controller/verification_controller.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
@@ -27,10 +28,12 @@ class VerificationScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 59),
-                Image.asset(
-                  Imagepath.verificationImage,
-                  height: 243,
-                  width: 376,
+                Center(
+                  child: Image.asset(
+                    Imagepath.verificationImage,
+                    height: 262,
+                    width: 238,
+                  ),
                 ),
                 const SizedBox(height: 60),
                 Center(
@@ -97,6 +100,7 @@ class VerificationScreen extends StatelessWidget {
                   buttonColor: AppColors.buttonBackgroundColor,
                   onTap: () {
                     // verificationController.verifyCode();
+                    Get.toNamed(AppRoute.createNewPasswordScreen);
                   },
                 ),
                 const SizedBox(height: 20),

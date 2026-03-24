@@ -7,4 +7,6 @@ class Imagepath {
   static String onboardingVector = 'assets/images/onboarding_vector.png';
   static String resetPasswordImage = 'assets/images/reset_password.png';
   static String verificationImage = 'assets/images/verification_otp.png';
+  static String createNewPasswordImage =
+      'assets/images/create_new_password.png';
 }

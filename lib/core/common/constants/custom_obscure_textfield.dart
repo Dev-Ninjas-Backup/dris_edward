@@ -1,3 +1,4 @@
+import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
@@ -19,7 +20,7 @@ class CustomObsecureTextfield extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: AppColors.buttonBackgroundColor),
       ),
       child: Obx(() {
         return TextField(

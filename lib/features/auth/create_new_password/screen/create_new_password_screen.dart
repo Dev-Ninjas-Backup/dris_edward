@@ -1,19 +1,18 @@
 import 'package:dris_edward/core/common/constants/app_colors.dart';
-import 'package:dris_edward/core/common/constants/custom_textfield.dart';
+import 'package:dris_edward/core/common/constants/custom_obscure_textfield.dart';
 import 'package:dris_edward/core/common/constants/imagepath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
 import 'package:dris_edward/core/common/widgets/custom_secondary_button.dart';
-import 'package:dris_edward/features/auth/reset_password/controller/reset_password_controller.dart';
-import 'package:dris_edward/routes/app_routes.dart';
+import 'package:dris_edward/features/auth/create_new_password/controller/create_new_password_conroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  ResetPasswordScreen({super.key});
+class CreateNewPasswordScreen extends StatelessWidget {
+  CreateNewPasswordScreen({super.key});
 
-  final ResetPasswordController resetPasswordController = Get.put(
-    ResetPasswordController(),
+  final CreateNewPasswordController createNewPasswordController = Get.put(
+    CreateNewPasswordController(),
   );
 
   @override
@@ -30,46 +29,59 @@ class ResetPasswordScreen extends StatelessWidget {
                 const SizedBox(height: 59),
                 Center(
                   child: Image.asset(
-                    Imagepath.resetPasswordImage,
-                    height: 243,
-                    width: 376,
+                    Imagepath.createNewPasswordImage,
+                    height: 265,
+                    width: 286,
                   ),
                 ),
                 const SizedBox(height: 60),
                 Center(
                   child: Text(
-                    'Reset your password',
+                    'Create New Password',
                     style: getHeadingTextStyle().copyWith(color: Colors.black),
                   ),
                 ),
                 const SizedBox(height: 8),
                 Center(
                   child: Text(
-                    "Enter your email we'll send you a OTP to reset your password",
+                    "Your New Password Must Be Different from Previously Used Password.",
                     textAlign: TextAlign.center,
                     style: getNormalTextStyle().copyWith(color: Colors.black54),
                   ),
                 ),
                 const SizedBox(height: 30),
                 Text(
-                  'Email Or Phone',
+                  'Password',
                   style: getNormalTextStyle(
                     fontsize: 18,
                     fontweight: FontWeight.w500,
                   ).copyWith(color: Colors.black),
                 ),
                 const SizedBox(height: 10),
-                CustomTextfield(
-                  controller: resetPasswordController.emailOrPhoneController,
-                  hintText: 'Enter your email or phone',
+                CustomObsecureTextfield(
+                  controller: createNewPasswordController.passwordController,
+                  hintText: 'Create a password',
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'Re Type Password',
+                  style: getNormalTextStyle(
+                    fontsize: 18,
+                    fontweight: FontWeight.w500,
+                  ).copyWith(color: Colors.black),
+                ),
+                const SizedBox(height: 10),
+                CustomObsecureTextfield(
+                  controller:
+                      createNewPasswordController.confirmPasswordController,
+                  hintText: 'Confirm password',
                 ),
                 const SizedBox(height: 50),
                 CustomPrimaryButton(
-                  buttonText: 'Send',
+                  buttonText: 'Continue',
                   buttonColor: AppColors.buttonBackgroundColor,
                   onTap: () {
                     // resetPasswordController.sendResetLink();
-                    Get.toNamed(AppRoute.getVerificationScreen());
                   },
                 ),
                 const SizedBox(height: 20),
