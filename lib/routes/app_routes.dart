@@ -1,10 +1,13 @@
 import 'package:dris_edward/features/auth/login/screen/login_screen.dart';
+import 'package:dris_edward/features/auth/reset_password/screen/reset_password_screen.dart';
+import 'package:dris_edward/features/auth/signup/screen/signup_screen.dart';
 import 'package:dris_edward/features/onboarding_1/screen/onboarding_1.dart';
 import 'package:dris_edward/features/onboarding_2/screen/onboarding_2.dart';
 import 'package:dris_edward/features/onboarding_3/screen/onboarding_3.dart';
 import 'package:dris_edward/features/onboarding_4/screen/onboarding_4.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:dris_edward/features/splash/screen/splash_screen.dart';
+import 'package:get/route_manager.dart';
 
 class AppRoute {
   //splash
@@ -14,12 +17,16 @@ class AppRoute {
   static String onboarding3 = '/onboarding3';
   static String onboarding4 = '/onboarding4';
   static String loginScreen = '/loginScreen';
+  static String signupScreen = '/signupScreen';
+  static String resetPasswordScreen = '/resetPasswordScreen';
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
   static String getOnboarding2() => onboarding2;
   static String getOnboarding3() => onboarding3;
   static String getOnboarding4() => onboarding4;
   static String getLoginScreen() => loginScreen;
+  static String getSignupScreen() => signupScreen;
+  static String getResetPasswordScreen() => resetPasswordScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -28,5 +35,7 @@ class AppRoute {
     GetPage(name: onboarding3, page: () => Onboarding3()),
     GetPage(name: onboarding4, page: () => Onboarding4()),
     GetPage(name: loginScreen, page: () => LoginScreen()),
+    GetPage(name: signupScreen, page: () => SignupScreen()),
+    GetPage(name: resetPasswordScreen, page: () => ResetPasswordScreen()),
   ];
 }

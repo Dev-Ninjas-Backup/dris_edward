@@ -43,7 +43,7 @@ class Onboarding1 extends StatelessWidget {
                     clipper: WhiteClipper(),
                     child: Container(
                       color: Colors.white,
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -61,7 +61,7 @@ class Onboarding1 extends StatelessWidget {
                                   fontweight: FontWeight.w700,
                                 ).copyWith(color: const Color(0xFF0B3D0B)),
                               ),
-                              SizedBox(height: 12.h),
+                              SizedBox(height: 0.h),
                               Text(
                                 "Explore freshly prepared meals from our kitchen and order your favourites in just a few taps.",
                                 textAlign: TextAlign.center,
@@ -102,7 +102,7 @@ class Onboarding1 extends StatelessWidget {
                 children: [
                   Image.asset(
                     Imagepath.onboardingVector,
-                    width: width * 0.48,
+                    width: width * 0.47,
                     fit: BoxFit.contain,
                   ),
                   Positioned(

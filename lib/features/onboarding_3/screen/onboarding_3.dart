@@ -102,7 +102,7 @@ class Onboarding3 extends StatelessWidget {
                 children: [
                   Image.asset(
                     Imagepath.onboardingVector,
-                    width: width * 0.48,
+                    width: width * 0.47,
                     fit: BoxFit.contain,
                   ),
                   Positioned(

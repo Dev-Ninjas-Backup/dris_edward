@@ -5,6 +5,7 @@ import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
 import 'package:dris_edward/core/common/constants/custom_obscure_textfield.dart';
 import 'package:dris_edward/core/common/constants/custom_textfield.dart';
 import 'package:dris_edward/features/auth/login/controller/login_controller.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -85,7 +86,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoute.resetPasswordScreen);
+                      },
                       child: Text(
                         "Forgot Password?",
                         style: getNormalTextStyle().copyWith(
@@ -150,7 +153,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoute.signupScreen);
+                        },
                         child: Text(
                           "Signup",
                           style: getNormalTextStyle(
