@@ -1,6 +1,7 @@
 import 'package:dris_edward/features/auth/login/screen/login_screen.dart';
 import 'package:dris_edward/features/auth/reset_password/screen/reset_password_screen.dart';
 import 'package:dris_edward/features/auth/signup/screen/signup_screen.dart';
+import 'package:dris_edward/features/auth/verification/screen/verification_screen.dart';
 import 'package:dris_edward/features/onboarding_1/screen/onboarding_1.dart';
 import 'package:dris_edward/features/onboarding_2/screen/onboarding_2.dart';
 import 'package:dris_edward/features/onboarding_3/screen/onboarding_3.dart';
@@ -19,6 +20,7 @@ class AppRoute {
   static String loginScreen = '/loginScreen';
   static String signupScreen = '/signupScreen';
   static String resetPasswordScreen = '/resetPasswordScreen';
+  static String verificationScreen = '/verificationScreen';
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
   static String getOnboarding2() => onboarding2;
@@ -27,6 +29,7 @@ class AppRoute {
   static String getLoginScreen() => loginScreen;
   static String getSignupScreen() => signupScreen;
   static String getResetPasswordScreen() => resetPasswordScreen;
+  static String getVerificationScreen() => verificationScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -37,5 +40,6 @@ class AppRoute {
     GetPage(name: loginScreen, page: () => LoginScreen()),
     GetPage(name: signupScreen, page: () => SignupScreen()),
     GetPage(name: resetPasswordScreen, page: () => ResetPasswordScreen()),
+    GetPage(name: verificationScreen, page: () => VerificationScreen()),
   ];
 }

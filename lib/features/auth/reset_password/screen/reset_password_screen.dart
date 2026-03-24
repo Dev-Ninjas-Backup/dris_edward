@@ -5,6 +5,7 @@ import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
 import 'package:dris_edward/core/common/widgets/custom_secondary_button.dart';
 import 'package:dris_edward/features/auth/reset_password/controller/reset_password_controller.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -66,6 +67,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   buttonColor: AppColors.buttonBackgroundColor,
                   onTap: () {
                     // resetPasswordController.sendResetLink();
+                    Get.toNamed(AppRoute.getVerificationScreen());
                   },
                 ),
                 const SizedBox(height: 20),
