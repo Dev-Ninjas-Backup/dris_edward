@@ -103,7 +103,7 @@ class _ProductCardState extends State<ProductCard> {
                     fontweight: FontWeight.w500,
                   ).copyWith(color: Colors.black),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 6),
                 Text(
                   widget.description,
                   maxLines: 2,
@@ -117,25 +117,29 @@ class _ProductCardState extends State<ProductCard> {
                 /// Rating
                 Row(
                   children: [
-                    const Icon(Icons.star, size: 14, color: Color(0xFFFFC107)),
+                    Icon(
+                      Icons.star,
+                      size: 20,
+                      color: AppColors.buttonBackgroundColor,
+                    ),
                     const SizedBox(width: 4),
                     Text(
                       '${widget.rating} ',
                       style: getNormalTextStyle(
                         fontsize: 12,
-                        fontweight: FontWeight.w600,
+                        fontweight: FontWeight.w500,
                       ).copyWith(color: Colors.black87),
                     ),
                     Text(
                       '(${widget.reviewText})',
                       style: getNormalTextStyle(
-                        fontsize: 11,
+                        fontsize: 12,
                       ).copyWith(color: Colors.grey),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
 
                 /// Price + Add
                 Row(
@@ -145,7 +149,7 @@ class _ProductCardState extends State<ProductCard> {
                       widget.price,
                       style: getNormalTextStyle(
                         fontsize: 14,
-                        fontweight: FontWeight.w600,
+                        fontweight: FontWeight.w400,
                       ).copyWith(color: Colors.black),
                     ),
                     Container(

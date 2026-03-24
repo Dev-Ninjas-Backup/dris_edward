@@ -10,7 +10,8 @@ class HomeController extends GetxController {
     'Coffee',
     'Soft Drinks',
   ].obs;
-  final selectedCategoryIndex = 1.obs; // Potato Bowls selected by default
+  // Currently selected category index (0 = 'All' by default)
+  final selectedCategoryIndex = 0.obs;
 
   final bannerImages = <String>[
     'assets/images/offer_image_1.png',
@@ -54,4 +55,8 @@ class HomeController extends GetxController {
       'image': 'assets/images/product_4.png',
     },
   ].obs;
+
+  void selectCategory(int index) {
+    selectedCategoryIndex.value = index;
+  }
 }

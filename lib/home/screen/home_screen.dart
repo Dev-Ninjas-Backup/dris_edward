@@ -3,19 +3,19 @@
 import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
-import 'package:dris_edward/core/common/widgets/custom_primary_button.dart';
+import 'package:dris_edward/core/common/widgets/custom_primary_icon_button.dart';
 import 'package:dris_edward/home/controller/home_controller.dart';
 import 'package:dris_edward/home/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key}) : homeController = Get.put(HomeController());
+
+  final HomeController homeController;
 
   @override
   Widget build(BuildContext context) {
-    final HomeController homeController = Get.put(HomeController());
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -111,48 +111,50 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 20),
 
                   /// Category Chips
-                  SizedBox(
-                    height: 44,
-                    child: Obx(
-                      () => ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: homeController.categories.length,
-                        separatorBuilder: (_, __) => const SizedBox(width: 8),
-                        itemBuilder: (context, index) {
-                          final isSelected =
-                              homeController.selectedCategoryIndex.value ==
-                              index;
+                  Obx(
+                    () => SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                          homeController.categories.length,
+                          (index) {
+                            final isSelected =
+                                homeController.selectedCategoryIndex.value ==
+                                index;
 
-                          return GestureDetector(
-                            onTap: () =>
-                                homeController.selectedCategoryIndex.value =
-                                    index,
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 10,
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
+                              child: GestureDetector(
+                                onTap: () =>
+                                    homeController.selectCategory(index),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                    vertical: 10,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: isSelected
+                                        ? AppColors.buttonBackgroundColor
+                                        : Colors.white,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Text(
+                                    homeController.categories[index],
+                                    style:
+                                        getNormalTextStyle(
+                                          fontsize: 16,
+                                          fontweight: FontWeight.w400,
+                                        ).copyWith(
+                                          color: isSelected
+                                              ? Colors.white
+                                              : Colors.black87,
+                                        ),
+                                  ),
+                                ),
                               ),
-                              decoration: BoxDecoration(
-                                color: isSelected
-                                    ? AppColors.buttonBackgroundColor
-                                    : Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                homeController.categories[index],
-                                style:
-                                    getNormalTextStyle(
-                                      fontsize: 16,
-                                      fontweight: FontWeight.w400,
-                                    ).copyWith(
-                                      color: isSelected
-                                          ? Colors.white
-                                          : Colors.black87,
-                                    ),
-                              ),
-                            ),
-                          );
-                        },
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
@@ -264,12 +266,18 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
 
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 40),
 
-                  /// Button
-                  CustomPrimaryButton(
+                  /// Button with icon
+                  CustomPrimaryIconButton(
                     buttonText: 'See more Store',
                     buttonColor: AppColors.buttonBackgroundColor,
+                    leading: Image.asset(
+                      Iconpath.bagIcon,
+                      width: 20,
+                      height: 20,
+                      color: Colors.white,
+                    ),
                     onTap: () {},
                   ),
 
