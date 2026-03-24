@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dris_edward/routes/app_routes.dart';
 import 'package:get/get.dart';
-import 'package:dris_edward/core/service/local_service/shared_preference_helper.dart';
+//import 'package:dris_edward/core/service/local_service/shared_preference_helper.dart';
 
 class SplashController extends GetxController {
   //final pref = Get.put(SharedPreferencesHelperController());
