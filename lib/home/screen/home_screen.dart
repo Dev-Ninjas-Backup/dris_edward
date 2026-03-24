@@ -237,27 +237,29 @@ class HomeScreen extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  /// Product Grid
-                  GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: homeController.products.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 12,
-                          crossAxisSpacing: 12,
-                          childAspectRatio: 0.7,
-                        ),
-                    itemBuilder: (context, index) {
-                      final product = homeController.products[index];
-                      return ProductCard(
-                        title: product['title']!,
-                        description: product['description']!,
-                        price: product['price']!,
-                        rating: product['rating']!,
-                        reviewText: product['reviews']!,
-                        imagePath: product['image']!,
+                  /// Product cards - responsive 2-column wrap
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      const spacing = 12.0;
+                      final itemWidth = (constraints.maxWidth - spacing) / 2;
+
+                      return Wrap(
+                        spacing: spacing,
+                        runSpacing: spacing,
+                        children: [
+                          for (final product in homeController.products)
+                            SizedBox(
+                              width: itemWidth,
+                              child: ProductCard(
+                                title: product['title']!,
+                                description: product['description']!,
+                                price: product['price']!,
+                                rating: product['rating']!,
+                                reviewText: product['reviews']!,
+                                imagePath: product['image']!,
+                              ),
+                            ),
+                        ],
                       );
                     },
                   ),

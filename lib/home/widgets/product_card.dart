@@ -109,7 +109,7 @@ class _ProductCardState extends State<ProductCard> {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: getNormalTextStyle(
-                    fontsize: 12,
+                    fontsize: 14,
                   ).copyWith(color: Colors.black54),
                 ),
                 const SizedBox(height: 6),
@@ -153,11 +153,11 @@ class _ProductCardState extends State<ProductCard> {
                       height: 28,
                       decoration: BoxDecoration(
                         color: AppColors.buttonBackgroundColor,
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(50),
                       ),
                       child: const Icon(
                         Icons.add,
-                        size: 18,
+                        size: 21,
                         color: Colors.white,
                       ),
                     ),
