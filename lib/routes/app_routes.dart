@@ -10,6 +10,7 @@ import 'package:dris_edward/features/onboarding_3/screen/onboarding_3.dart';
 import 'package:dris_edward/features/onboarding_4/screen/onboarding_4.dart';
 import 'package:dris_edward/features/product_details/screen/product_details_screen.dart';
 import 'package:dris_edward/features/select_resturant/screen/select_resturant_screen.dart';
+import 'package:dris_edward/home/screen/home_screen.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:dris_edward/features/splash/screen/splash_screen.dart';
 import 'package:get/route_manager.dart';
@@ -29,6 +30,7 @@ class AppRoute {
   static String bottomNavbarScreen = '/bottomNavbarScreen';
   static String selectResturantScreen = '/selectResturantScreen';
   static String productDetailsScreen = '/productDetailsScreen';
+  static String homeScreen = '/homeScreen';
 
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
@@ -43,6 +45,7 @@ class AppRoute {
   static String getBottomNavbarScreen() => bottomNavbarScreen;
   static String getSelectResturantScreen() => selectResturantScreen;
   static String getProductDetailsScreen() => productDetailsScreen;
+  static String getHomeScreen() => homeScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -61,5 +64,6 @@ class AppRoute {
     GetPage(name: bottomNavbarScreen, page: () => NavBarScreen()),
     GetPage(name: selectResturantScreen, page: () => SelectResturantScreen()),
     GetPage(name: productDetailsScreen, page: () => ProductDetailsScreen()),
+    GetPage(name: homeScreen, page: () => HomeScreen()),
   ];
 }
