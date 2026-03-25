@@ -1,3 +1,4 @@
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,11 @@ class LoginController extends GetxController {
   }
 
   // Placeholder for future login logic
-  Future<void> login() async {}
+  Future<void> login() async {
+    Get.toNamed(
+      AppRoute.getBottomNavbarScreen(),
+    ); // Navigate to bottom navbar screen on login
+  }
 
   @override
   void onClose() {

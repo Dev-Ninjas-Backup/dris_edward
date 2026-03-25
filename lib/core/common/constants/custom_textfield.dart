@@ -1,3 +1,4 @@
+import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class CustomTextfield extends StatelessWidget {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.buttonBackgroundColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
