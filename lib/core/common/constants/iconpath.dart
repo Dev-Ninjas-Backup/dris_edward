@@ -9,4 +9,5 @@ class Iconpath {
   static String locationIcon = 'assets/icons/location.png';
   static String notificationIcon = 'assets/icons/notification.png';
   static String bagIcon = 'assets/icons/bag_icon.png';
+  static String locationIcon2 = 'assets/icons/location_icon.png';
 }

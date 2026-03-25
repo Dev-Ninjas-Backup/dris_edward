@@ -8,6 +8,7 @@ import 'package:dris_edward/features/onboarding_1/screen/onboarding_1.dart';
 import 'package:dris_edward/features/onboarding_2/screen/onboarding_2.dart';
 import 'package:dris_edward/features/onboarding_3/screen/onboarding_3.dart';
 import 'package:dris_edward/features/onboarding_4/screen/onboarding_4.dart';
+import 'package:dris_edward/features/select_resturant/screen/select_resturant_screen.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:dris_edward/features/splash/screen/splash_screen.dart';
 import 'package:get/route_manager.dart';
@@ -25,6 +26,8 @@ class AppRoute {
   static String verificationScreen = '/verificationScreen';
   static String createNewPasswordScreen = '/createNewPasswordScreen';
   static String bottomNavbarScreen = '/bottomNavbarScreen';
+  static String selectResturantScreen = '/selectResturantScreen';
+
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
   static String getOnboarding2() => onboarding2;
@@ -36,7 +39,7 @@ class AppRoute {
   static String getVerificationScreen() => verificationScreen;
   static String getCreateNewPasswordScreen() => createNewPasswordScreen;
   static String getBottomNavbarScreen() => bottomNavbarScreen;
-
+  static String getSelectResturantScreen() => selectResturantScreen;
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
     GetPage(name: onboarding1, page: () => Onboarding1()),
@@ -52,5 +55,6 @@ class AppRoute {
       page: () => CreateNewPasswordScreen(),
     ),
     GetPage(name: bottomNavbarScreen, page: () => NavBarScreen()),
+    GetPage(name: selectResturantScreen, page: () => SelectResturantScreen()),
   ];
 }
