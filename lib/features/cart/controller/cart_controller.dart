@@ -58,11 +58,10 @@ class CartController extends GetxController {
   }
 
   void addMoreItems() {
-    // TODO: Navigate to home or product listing to add more items
     Get.toNamed(AppRoute.homeScreen);
   }
 
   void checkout() {
-    // TODO: Implement checkout functionality
+    Get.toNamed(AppRoute.checkoutScreen);
   }
 }

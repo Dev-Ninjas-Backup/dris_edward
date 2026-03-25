@@ -11,4 +11,6 @@ class Iconpath {
   static String bagIcon = 'assets/icons/bag_icon.png';
   static String locationIcon2 = 'assets/icons/location_icon.png';
   static String checkIcon = 'assets/icons/checkbox_checked.png';
+  static String basketIcon = 'assets/icons/basket_icon.png';
+  static String bycycleIcon = 'assets/icons/bycycle.png';
 }
