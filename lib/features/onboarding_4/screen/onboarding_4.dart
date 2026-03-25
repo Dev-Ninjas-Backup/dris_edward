@@ -49,7 +49,9 @@ class Onboarding4 extends StatelessWidget {
               CustomPrimaryButton(
                 buttonText: "Continue as Guest",
                 buttonColor: Colors.transparent,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoute.selectResturantScreen);
+                },
               ),
               SizedBox(height: 50),
             ],

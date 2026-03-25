@@ -261,6 +261,19 @@ class HomeScreen extends StatelessWidget {
                                 rating: product['rating']!,
                                 reviewText: product['reviews']!,
                                 imagePath: product['image']!,
+                                onTap: () {
+                                  Get.toNamed(
+                                    AppRoute.productDetailsScreen,
+                                    arguments: {
+                                      'title': product['title'],
+                                      'description': product['description'],
+                                      'price': product['price'],
+                                      'rating': product['rating'],
+                                      'reviewCount': product['reviews'],
+                                      'imagePath': product['image'],
+                                    },
+                                  );
+                                },
                               ),
                             ),
                         ],

@@ -3,7 +3,7 @@ import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/account/screen/account_screen.dart';
 import 'package:dris_edward/features/bottom_navbar/controller/bottom_navbar_controller.dart';
-import 'package:dris_edward/features/cart/screen/cart_screen.dart';
+import 'package:dris_edward/features/cart/screen/my_cart.dart';
 import 'package:dris_edward/features/favorite/screen/favorite_screen.dart';
 import 'package:dris_edward/features/rewards/screen/rewards_screen.dart';
 import 'package:dris_edward/home/screen/home_screen.dart';
@@ -22,7 +22,7 @@ class NavBarScreen extends StatelessWidget {
       HomeScreen(),
       FavoriteScreen(),
       RewardsScreen(),
-      CartScreen(),
+      MyCart(),
       AccountScreen(),
     ];
 
