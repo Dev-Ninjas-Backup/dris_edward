@@ -14,9 +14,7 @@ class LoginController extends GetxController {
 
   // Placeholder for future login logic
   Future<void> login() async {
-    Get.toNamed(
-      AppRoute.getBottomNavbarScreen(),
-    ); // Navigate to bottom navbar screen on login
+    Get.toNamed(AppRoute.selectResturantScreen);
   }
 
   @override

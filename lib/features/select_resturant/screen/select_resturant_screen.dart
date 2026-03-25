@@ -3,9 +3,9 @@
 import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
-import 'package:dris_edward/core/common/widgets/custom_primary_icon_button.dart';
-import 'package:dris_edward/home/controller/home_controller.dart';
-import 'package:dris_edward/home/widgets/product_card.dart';
+import 'package:dris_edward/features/select_resturant/controller/select_resturant_controller.dart';
+import 'package:dris_edward/features/select_resturant/widgets/store_card.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +13,8 @@ class SelectResturantScreen extends StatelessWidget {
   const SelectResturantScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SelectResturantController());
+
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -40,7 +42,7 @@ class SelectResturantScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -55,12 +57,17 @@ class SelectResturantScreen extends StatelessWidget {
                         const Icon(Icons.search, color: Colors.black),
                         const SizedBox(width: 8),
                         Expanded(
-                          child: Text(
-                            'Search...',
-                            style: getNormalTextStyle(
-                              fontsize: 14,
-                              fontweight: FontWeight.w400,
-                            ).copyWith(color: Colors.grey),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Handle search functionality
+                            },
+                            child: Text(
+                              'Search restaurants...',
+                              style: getNormalTextStyle(
+                                fontsize: 14,
+                                fontweight: FontWeight.w400,
+                              ).copyWith(color: Colors.grey),
+                            ),
                           ),
                         ),
                       ],
@@ -76,16 +83,21 @@ class SelectResturantScreen extends StatelessWidget {
                         width: 18,
                       ),
                       const SizedBox(width: 10),
-                      Text(
-                        'Use my current location',
-                        style: getNormalTextStyle(
-                          fontsize: 16,
-                          fontweight: FontWeight.w400,
-                        ).copyWith(color: AppColors.buttonBackgroundColor),
+                      GestureDetector(
+                        onTap: () {
+                          // Handle location permission
+                        },
+                        child: Text(
+                          'Use my current location',
+                          style: getNormalTextStyle(
+                            fontsize: 16,
+                            fontweight: FontWeight.w400,
+                          ).copyWith(color: AppColors.buttonBackgroundColor),
+                        ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
                   Text(
                     'Nearby Stores',
                     style: getNormalTextStyle(
@@ -93,6 +105,25 @@ class SelectResturantScreen extends StatelessWidget {
                       fontweight: FontWeight.w500,
                     ).copyWith(color: Colors.black),
                   ),
+                  const SizedBox(height: 16),
+                  Obx(
+                    () => ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: controller.stores.length,
+                      itemBuilder: (context, index) {
+                        final store = controller.stores[index];
+                        return StoreCard(
+                          store: store,
+                          onTap: () {
+                            controller.selectStore(store);
+                            Get.toNamed(AppRoute.bottomNavbarScreen);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
