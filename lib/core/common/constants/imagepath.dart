@@ -9,4 +9,5 @@ class Imagepath {
   static String verificationImage = 'assets/images/verification_otp.png';
   static String createNewPasswordImage =
       'assets/images/create_new_password.png';
+  static String coffeeImage = 'assets/images/coffee_image.png';
 }

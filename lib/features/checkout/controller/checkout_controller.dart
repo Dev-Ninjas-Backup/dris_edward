@@ -10,6 +10,6 @@ class CheckoutController extends GetxController {
   }
 
   void continueCheckout() {
-    //Get.toNamed(AppRoute.createNewPasswordScreen);
+    Get.toNamed(AppRoute.addToCartScreen);
   }
 }

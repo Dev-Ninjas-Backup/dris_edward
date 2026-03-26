@@ -1,3 +1,4 @@
+import 'package:dris_edward/features/add_to_cart/screen/add_to_cart_screen.dart';
 import 'package:dris_edward/features/auth/create_new_password/screen/create_new_password_screen.dart';
 import 'package:dris_edward/features/auth/login/screen/login_screen.dart';
 import 'package:dris_edward/features/auth/reset_password/screen/reset_password_screen.dart';
@@ -33,6 +34,7 @@ class AppRoute {
   static String productDetailsScreen = '/productDetailsScreen';
   static String homeScreen = '/homeScreen';
   static String checkoutScreen = '/checkoutScreen';
+  static String addToCartScreen = '/addToCartScreen';
 
   static String getSplashScreen() => splashScreen;
   static String getOnboarding1() => onboarding1;
@@ -49,6 +51,7 @@ class AppRoute {
   static String getProductDetailsScreen() => productDetailsScreen;
   static String getHomeScreen() => homeScreen;
   static String getCheckoutScreen() => checkoutScreen;
+  static String getAddToCartScreen() => addToCartScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -69,5 +72,6 @@ class AppRoute {
     GetPage(name: productDetailsScreen, page: () => ProductDetailsScreen()),
     GetPage(name: homeScreen, page: () => HomeScreen()),
     GetPage(name: checkoutScreen, page: () => CheckoutScreen()),
+    GetPage(name: addToCartScreen, page: () => AddToCartScreen()),
   ];
 }
