@@ -15,4 +15,7 @@ class Iconpath {
   static String bycycleIcon = 'assets/icons/bycycle.png';
   static String coin = 'assets/icons/coin.png';
   static String coins = 'assets/icons/coins.png';
+  static String termsIcon = 'assets/icons/terms_icon.png';
+  static String orderIcon = 'assets/icons/order_history_icon.png';
+  static String logoutIcon = 'assets/icons/logout_icon.png';
 }
