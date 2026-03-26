@@ -5,6 +5,7 @@ import 'package:dris_edward/core/common/constants/imagepath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/account/controller/account_controller.dart';
 import 'package:dris_edward/features/account/widgets/section_item.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +26,7 @@ class AccountScreen extends StatelessWidget {
         ),
       ),
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -103,7 +104,9 @@ class AccountScreen extends StatelessWidget {
                     iconAsset: Iconpath.accountIcon,
                     title: 'Personal Information',
                     subtitle: 'View your Profile Info',
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppRoute.profileInfoScreen);
+                    },
                   ),
 
                   const SizedBox(height: 16),

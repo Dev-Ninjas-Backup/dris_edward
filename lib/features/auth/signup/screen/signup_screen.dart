@@ -118,6 +118,8 @@ class SignupScreen extends StatelessWidget {
                           'Login',
                           style: getNormalTextStyle().copyWith(
                             color: AppColors.buttonBackgroundColor,
+                            decoration: TextDecoration.underline,
+                            decorationColor: AppColors.buttonBackgroundColor,
                           ),
                         ),
                       ),

@@ -18,4 +18,5 @@ class Iconpath {
   static String termsIcon = 'assets/icons/terms_icon.png';
   static String orderIcon = 'assets/icons/order_history_icon.png';
   static String logoutIcon = 'assets/icons/logout_icon.png';
+  static String deleteIcon = 'assets/icons/delete_icon.png';
 }
