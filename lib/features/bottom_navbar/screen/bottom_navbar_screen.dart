@@ -8,7 +8,6 @@ import 'package:dris_edward/features/favorite/screen/favorite_screen.dart';
 import 'package:dris_edward/features/rewards/screen/rewards_screen.dart';
 import 'package:dris_edward/home/screen/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class NavBarScreen extends StatelessWidget {
@@ -47,12 +46,7 @@ class NavBarScreen extends StatelessWidget {
         body: pages[controller.currentIndex.value],
         bottomNavigationBar: Container(
           decoration: BoxDecoration(color: Colors.white),
-          padding: EdgeInsets.only(
-            left: 30.w,
-            right: 30.w,
-            bottom: 46.h,
-            top: 12.h,
-          ),
+          padding: EdgeInsets.only(left: 30, right: 30, bottom: 46, top: 12),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(icons.length, (index) {
@@ -64,8 +58,8 @@ class NavBarScreen extends StatelessWidget {
                   children: [
                     Image.asset(
                       icons[index],
-                      width: 24.w,
-                      height: 24.h,
+                      width: 24,
+                      height: 24,
                       color: isSelected
                           ? AppColors.buttonBackgroundColor
                           : Colors.grey,
