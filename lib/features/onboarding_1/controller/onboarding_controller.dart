@@ -1,8 +1,30 @@
 import 'package:get/get.dart';
+import '../../../core/common/constants/imagepath.dart';
 import '../../../routes/app_routes.dart';
 
 class OnboardingController extends GetxController {
   RxInt currentPage = 1.obs;
+
+  final List<Map<String, String>> onboardingData = [
+    {
+      'image': Imagepath.onboarding1Image,
+      'title': 'Craving Something Delicious?',
+      'description':
+          'Explore freshly prepared meals from our kitchen and order your favourites in just a few taps.',
+    },
+    {
+      'image': Imagepath.onboarding2Image,
+      'title': 'Order in Seconds',
+      'description':
+          'Browse the menu, customize your meal, and place your order quickly and effortlessly.',
+    },
+    {
+      'image': Imagepath.onboarding3Image,
+      'title': 'Delivered Fresh to Your Door',
+      'description':
+          'We prepare your food with care and deliver it hot and fresh, right on time.',
+    },
+  ];
 
   void nextPage() {
     if (currentPage.value < 3) {

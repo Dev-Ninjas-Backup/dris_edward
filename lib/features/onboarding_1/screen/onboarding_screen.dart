@@ -5,28 +5,7 @@ import '../../../core/common/style/global_text_style.dart';
 import '../controller/onboarding_controller.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  final List<Map<String, String>> onboardingData = [
-    {
-      'image': Imagepath.onboarding1Image,
-      'title': 'Craving Something Delicious?',
-      'description':
-          'Explore freshly prepared meals from our kitchen and order your favourites in just a few taps.',
-    },
-    {
-      'image': Imagepath.onboarding2Image,
-      'title': 'Order in Seconds',
-      'description':
-          'Browse the menu, customize your meal, and place your order quickly and effortlessly.',
-    },
-    {
-      'image': Imagepath.onboarding3Image,
-      'title': 'Delivered Fresh to Your Door',
-      'description':
-          'We prepare your food with care and deliver it hot and fresh, right on time.',
-    },
-  ];
-
-  OnboardingScreen({super.key});
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +26,7 @@ class OnboardingScreen extends StatelessWidget {
       child: Scaffold(
         body: Obx(() {
           final pageIndex = controller.currentPage.value - 1;
-          final data = onboardingData[pageIndex];
+          final data = controller.onboardingData[pageIndex];
 
           return SizedBox(
             height: height * 1,

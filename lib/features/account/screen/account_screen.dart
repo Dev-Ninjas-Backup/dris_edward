@@ -116,7 +116,9 @@ class AccountScreen extends StatelessWidget {
                     iconAsset: Iconpath.orderIcon,
                     title: 'Order History',
                     subtitle: 'View your past orders',
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppRoute.orderHistoryScreen);
+                    },
                   ),
 
                   const SizedBox(height: 16),

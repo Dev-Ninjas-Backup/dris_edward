@@ -8,6 +8,7 @@ import 'package:dris_edward/features/bottom_navbar/screen/bottom_navbar_screen.d
 import 'package:dris_edward/features/checkout/screen/checkout_screen.dart';
 import 'package:dris_edward/features/onboarding_1/screen/onboarding_screen.dart';
 import 'package:dris_edward/features/onboarding_4/screen/onboarding_4.dart';
+import 'package:dris_edward/features/order_history/screen/order_history_screen.dart';
 import 'package:dris_edward/features/product_details/screen/product_details_screen.dart';
 import 'package:dris_edward/features/profile_info/screen/profile_info_screen.dart';
 import 'package:dris_edward/features/select_resturant/screen/select_resturant_screen.dart';
@@ -34,6 +35,7 @@ class AppRoute {
   static String checkoutScreen = '/checkoutScreen';
   static String addToCartScreen = '/addToCartScreen';
   static String profileInfoScreen = '/profileInfoScreen';
+  static String orderHistoryScreen = '/orderHistoryScreen';
 
   static String getSplashScreen() => splashScreen;
   static String getOnboarding() => onboarding;
@@ -50,6 +52,7 @@ class AppRoute {
   static String getCheckoutScreen() => checkoutScreen;
   static String getAddToCartScreen() => addToCartScreen;
   static String getProfileInfoScreen() => profileInfoScreen;
+  static String getOrderHistoryScreen() => orderHistoryScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -70,5 +73,6 @@ class AppRoute {
     GetPage(name: checkoutScreen, page: () => CheckoutScreen()),
     GetPage(name: addToCartScreen, page: () => AddToCartScreen()),
     GetPage(name: profileInfoScreen, page: () => ProfileInfoScreen()),
+    GetPage(name: orderHistoryScreen, page: () => OrderHistoryScreen()),
   ];
 }
