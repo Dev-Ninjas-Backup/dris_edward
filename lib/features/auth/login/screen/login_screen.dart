@@ -93,6 +93,8 @@ class LoginScreen extends StatelessWidget {
                         "Forgot Password?",
                         style: getNormalTextStyle().copyWith(
                           color: AppColors.buttonBackgroundColor,
+                          decorationColor: AppColors.buttonBackgroundColor,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
                     ),
@@ -158,10 +160,16 @@ class LoginScreen extends StatelessWidget {
                         },
                         child: Text(
                           "Signup",
-                          style: getNormalTextStyle(
-                            fontsize: 14,
-                            fontweight: FontWeight.w600,
-                          ).copyWith(color: AppColors.buttonBackgroundColor),
+                          style:
+                              getNormalTextStyle(
+                                fontsize: 14,
+                                fontweight: FontWeight.w600,
+                              ).copyWith(
+                                color: AppColors.buttonBackgroundColor,
+                                decoration: TextDecoration.underline,
+                                decorationColor:
+                                    AppColors.buttonBackgroundColor,
+                              ),
                         ),
                       ),
                     ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle getHeadingTextStyle({
@@ -9,7 +8,7 @@ TextStyle getHeadingTextStyle({
   //Color color = AppColors.primaryTextColor,
 }) {
   return GoogleFonts.inter(
-    fontSize: fontsize.sp,
+    fontSize: fontsize,
     fontWeight: fontweight,
     //color: color,
   );
@@ -22,7 +21,7 @@ TextStyle getNormalTextStyle({
   //Color color = AppColors.primaryTextColor,
 }) {
   return GoogleFonts.inter(
-    fontSize: fontsize.sp,
+    fontSize: fontsize,
     fontWeight: fontweight,
     //color: color,
   );
@@ -35,7 +34,7 @@ TextStyle getButtonTextStyle({
   //Color color = AppColors.primaryTextColor,
 }) {
   return GoogleFonts.inter(
-    fontSize: fontsize.sp,
+    fontSize: fontsize,
     fontWeight: fontweight,
     //color: color,
   );

@@ -106,10 +106,11 @@ class AddToCartScreen extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Icon(
-                                      Icons.location_on_outlined,
-                                      size: 24,
+                                    Image.asset(
+                                      Iconpath.locationIcon,
                                       color: Colors.black,
+                                      width: 24,
+                                      height: 24,
                                     ),
                                     const SizedBox(width: 6),
                                     Text(

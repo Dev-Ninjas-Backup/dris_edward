@@ -1,6 +1,4 @@
 // ignore_for_file: deprecated_member_use
-
-import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/constants/imagepath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
@@ -57,7 +55,7 @@ class RewardsScreen extends StatelessWidget {
                               Text(
                                 'Earn Points',
                                 style: getNormalTextStyle(
-                                  fontsize: 16,
+                                  fontsize: 20,
                                   fontweight: FontWeight.w600,
                                 ).copyWith(color: Colors.black),
                               ),
@@ -65,7 +63,7 @@ class RewardsScreen extends StatelessWidget {
                                 'Earn 1 point per €1 spent',
                                 style: getNormalTextStyle(
                                   fontsize: 14,
-                                  fontweight: FontWeight.w500,
+                                  fontweight: FontWeight.w400,
                                 ).copyWith(color: Colors.black),
                               ),
                               const SizedBox(height: 4),
@@ -74,7 +72,7 @@ class RewardsScreen extends StatelessWidget {
                                 style: getNormalTextStyle(
                                   fontsize: 12,
                                   fontweight: FontWeight.w400,
-                                ).copyWith(color: const Color(0xFFFF6B6B)),
+                                ),
                               ),
                             ],
                           ),
@@ -82,13 +80,13 @@ class RewardsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 32),
+                  const SizedBox(height: 30),
 
                   /// Redeem Points Section
                   Text(
                     'Redeem Points',
                     style: getNormalTextStyle(
-                      fontsize: 16,
+                      fontsize: 20,
                       fontweight: FontWeight.w600,
                     ).copyWith(color: Colors.black),
                   ),
@@ -96,21 +94,21 @@ class RewardsScreen extends StatelessWidget {
 
                   /// Free Coffee Reward
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: Colors.grey[300]!),
                     ),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
                             Imagepath.coffeeImage,
-                            width: 80,
-                            height: 80,
+                            width: 87,
+                            height: 87,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -122,19 +120,19 @@ class RewardsScreen extends StatelessWidget {
                               Text(
                                 'Free Coffee',
                                 style: getNormalTextStyle(
-                                  fontsize: 16,
+                                  fontsize: 20,
                                   fontweight: FontWeight.w600,
                                 ).copyWith(color: Colors.black),
                               ),
-                              const SizedBox(height: 4),
+                              //const SizedBox(height: 4),
                               Text(
                                 'Any regular sue coffee',
                                 style: getNormalTextStyle(
-                                  fontsize: 12,
+                                  fontsize: 14,
                                   fontweight: FontWeight.w400,
                                 ).copyWith(color: Colors.black54),
                               ),
-                              const SizedBox(height: 8),
+                              const SizedBox(height: 4),
                               Container(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 8,
@@ -264,7 +262,7 @@ class RewardsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 3000),
+                  const SizedBox(height: 50),
                 ],
               ),
             ),

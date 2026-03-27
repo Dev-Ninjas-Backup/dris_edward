@@ -118,7 +118,7 @@ class RewardCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -40,
+          top: -31,
           left: 0,
           right: 0,
           child: Center(
