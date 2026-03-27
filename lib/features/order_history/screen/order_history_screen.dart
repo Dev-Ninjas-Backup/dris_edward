@@ -1,6 +1,7 @@
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/order_history/controller/order_history_controller.dart';
 import 'package:dris_edward/features/order_history/widgets/order_item_widget.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -72,6 +73,7 @@ class OrderHistoryScreen extends StatelessWidget {
                         time: order.time,
                         totalAmount: order.totalAmount,
                         statusColor: controller.getStatusColor(order.status),
+                        onTap: () => Get.toNamed(AppRoute.orderDetailsScreen),
                       );
                     },
                   ),

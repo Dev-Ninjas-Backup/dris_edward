@@ -11,4 +11,5 @@ class Imagepath {
       'assets/images/create_new_password.png';
   static String coffeeImage = 'assets/images/coffee_image.png';
   static String profileImage = 'assets/images/profile_image.png';
+  static String orderDetailsImage = 'assets/images/order_details_image.png';
 }
