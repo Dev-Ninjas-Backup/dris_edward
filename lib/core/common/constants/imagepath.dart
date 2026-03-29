@@ -12,4 +12,5 @@ class Imagepath {
   static String coffeeImage = 'assets/images/coffee_image.png';
   static String profileImage = 'assets/images/profile_image.png';
   static String orderDetailsImage = 'assets/images/order_details_image.png';
+  static String kitchenLogo = 'assets/images/kitchen_logo.png';
 }
