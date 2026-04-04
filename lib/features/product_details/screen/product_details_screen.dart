@@ -136,38 +136,33 @@ class ProductDetailsScreen extends StatelessWidget {
                     /// Rating
                     GestureDetector(
                       onTap: () {
-                        // Handle rating tap
+                        Get.toNamed(AppRoute.getReviewScreen());
                       },
-                      child: GestureDetector(
-                        onTap: () {
-                          Get.toNamed(AppRoute.getReviewScreen());
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              size: 20,
-                              color: AppColors.buttonBackgroundColor,
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              '${controller.product.rating}',
-                              style: getNormalTextStyle(
-                                fontsize: 20,
-                                fontweight: FontWeight.w500,
-                              ).copyWith(color: Colors.black),
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              '(${controller.product.reviewCount} review)',
-                              style: getNormalTextStyle(
-                                fontsize: 20,
-                                fontweight: FontWeight.w400,
-                              ).copyWith(color: Colors.grey),
-                            ),
-                          ],
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 20,
+                            color: AppColors.buttonBackgroundColor,
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            '${controller.product.rating}',
+                            style: getNormalTextStyle(
+                              fontsize: 20,
+                              fontweight: FontWeight.w500,
+                            ).copyWith(color: Colors.black),
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            '(${controller.product.reviewCount} review)',
+                            style: getNormalTextStyle(
+                              fontsize: 20,
+                              fontweight: FontWeight.w400,
+                            ).copyWith(color: Colors.grey),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 20),

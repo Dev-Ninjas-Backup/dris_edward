@@ -7,4 +7,8 @@ class AppColors {
   // static final redColor = Color(0XFFBD001F);
   // static final redAccent = Color(0XFFF8E6E9);
   static final buttonBackgroundColor = Color(0xFF054805);
+  static final falseStarColor = Color(0xFF99B499);
+  static final progressExcellent = Color(0xFF22C55E);
+  static final progressGood = Color(0xFFB8DE68);
+  static final progressAverage = Color(0xFFF5A51E);
 }
