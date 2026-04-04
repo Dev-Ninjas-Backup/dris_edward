@@ -2,6 +2,7 @@ import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/product_details/controller/product_details_controller.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -137,31 +138,36 @@ class ProductDetailsScreen extends StatelessWidget {
                       onTap: () {
                         // Handle rating tap
                       },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.star,
-                            size: 20,
-                            color: AppColors.buttonBackgroundColor,
-                          ),
-                          const SizedBox(width: 6),
-                          Text(
-                            '${controller.product.rating}',
-                            style: getNormalTextStyle(
-                              fontsize: 20,
-                              fontweight: FontWeight.w500,
-                            ).copyWith(color: Colors.black),
-                          ),
-                          const SizedBox(width: 6),
-                          Text(
-                            '(${controller.product.reviewCount} review)',
-                            style: getNormalTextStyle(
-                              fontsize: 20,
-                              fontweight: FontWeight.w400,
-                            ).copyWith(color: Colors.grey),
-                          ),
-                        ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(AppRoute.getReviewScreen());
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              size: 20,
+                              color: AppColors.buttonBackgroundColor,
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              '${controller.product.rating}',
+                              style: getNormalTextStyle(
+                                fontsize: 20,
+                                fontweight: FontWeight.w500,
+                              ).copyWith(color: Colors.black),
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              '(${controller.product.reviewCount} review)',
+                              style: getNormalTextStyle(
+                                fontsize: 20,
+                                fontweight: FontWeight.w400,
+                              ).copyWith(color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
