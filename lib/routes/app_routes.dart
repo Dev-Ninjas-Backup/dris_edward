@@ -6,6 +6,8 @@ import 'package:dris_edward/features/auth/signup/screen/signup_screen.dart';
 import 'package:dris_edward/features/auth/verification/screen/verification_screen.dart';
 import 'package:dris_edward/features/bottom_navbar/screen/bottom_navbar_screen.dart';
 import 'package:dris_edward/features/checkout/screen/checkout_screen.dart';
+import 'package:dris_edward/features/explore_menu/screen/explore_menu_screen.dart';
+import 'package:dris_edward/features/favorite/screen/favorite_screen.dart';
 import 'package:dris_edward/features/onboarding_1/screen/onboarding_screen.dart';
 import 'package:dris_edward/features/onboarding_4/screen/onboarding_4.dart';
 import 'package:dris_edward/features/order_details/screen/order_details_screen.dart';
@@ -38,6 +40,8 @@ class AppRoute {
   static String profileInfoScreen = '/profileInfoScreen';
   static String orderHistoryScreen = '/orderHistoryScreen';
   static String orderDetailsScreen = '/orderDetailsScreen';
+  static String favoriteScreen = '/favoriteScreen';
+  static String exploreMenuScreen = '/exploreMenuScreen';
 
   static String getSplashScreen() => splashScreen;
   static String getOnboarding() => onboarding;
@@ -56,6 +60,8 @@ class AppRoute {
   static String getProfileInfoScreen() => profileInfoScreen;
   static String getOrderHistoryScreen() => orderHistoryScreen;
   static String getOrderDetailsScreen() => orderDetailsScreen;
+  static String getFavoriteScreen() => favoriteScreen;
+  static String getExploreMenuScreen() => exploreMenuScreen;
 
   static List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -78,5 +84,7 @@ class AppRoute {
     GetPage(name: profileInfoScreen, page: () => ProfileInfoScreen()),
     GetPage(name: orderHistoryScreen, page: () => OrderHistoryScreen()),
     GetPage(name: orderDetailsScreen, page: () => OrderDetailsScreen()),
+    GetPage(name: favoriteScreen, page: () => FavoriteScreen()),
+    GetPage(name: exploreMenuScreen, page: () => ExploreMenuScreen()),
   ];
 }
