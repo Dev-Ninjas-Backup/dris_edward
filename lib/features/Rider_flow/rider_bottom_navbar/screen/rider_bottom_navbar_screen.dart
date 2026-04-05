@@ -1,28 +1,30 @@
 import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
-import 'package:dris_edward/features/customer_flow/account/screen/account_screen.dart';
-import 'package:dris_edward/features/customer_flow/bottom_navbar/controller/bottom_navbar_controller.dart';
-import 'package:dris_edward/features/customer_flow/cart/screen/my_cart.dart';
-import 'package:dris_edward/features/customer_flow/favorite/screen/favorite_screen.dart';
-import 'package:dris_edward/features/customer_flow/rewards/screen/rewards_screen.dart';
-import 'package:dris_edward/features/customer_flow/home/screen/home_screen.dart';
+import 'package:dris_edward/features/Rider_flow/Request_screen/screen/request_screen.dart';
+import 'package:dris_edward/features/Rider_flow/notification/screen/notification_screen.dart';
+import 'package:dris_edward/features/Rider_flow/order_screen/screen/order_screen.dart';
+import 'package:dris_edward/features/Rider_flow/rider_account/screen/rider_account_screen.dart';
+import 'package:dris_edward/features/Rider_flow/rider_bottom_navbar/controller/rider_bottom_navbar_controller.dart';
+import 'package:dris_edward/features/Rider_flow/rider_home/screen/rider_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class NavBarScreen extends StatelessWidget {
-  const NavBarScreen({super.key});
+class RiderBottomNavbar extends StatelessWidget {
+  const RiderBottomNavbar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final NavBarController controller = Get.put(NavBarController());
+    final RiderBottomNavbarController controller = Get.put(
+      RiderBottomNavbarController(),
+    );
 
     final List<Widget> pages = [
-      HomeScreen(),
-      FavoriteScreen(),
-      RewardsScreen(),
-      MyCart(),
-      AccountScreen(),
+      RiderHomeScreen(),
+      RequestScreen(),
+      OrderScreen(),
+      NotificationScreen(),
+      RiderAccountScreen(),
     ];
 
     final List<String> icons = [
@@ -35,9 +37,9 @@ class NavBarScreen extends StatelessWidget {
 
     final List<String> labels = [
       "Home",
-      "Favorite",
-      "Rewards",
-      "Cart",
+      "Request",
+      "Order",
+      "Notification",
       "Account",
     ];
 

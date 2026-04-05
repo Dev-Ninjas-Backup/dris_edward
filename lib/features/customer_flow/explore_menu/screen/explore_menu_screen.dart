@@ -1,7 +1,7 @@
 import 'package:dris_edward/core/common/constants/app_colors.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
-import 'package:dris_edward/home/controller/home_controller.dart';
-import 'package:dris_edward/home/widgets/product_card.dart';
+import 'package:dris_edward/features/customer_flow/home/controller/home_controller.dart';
+import 'package:dris_edward/features/customer_flow/home/widgets/product_card.dart';
 import 'package:dris_edward/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

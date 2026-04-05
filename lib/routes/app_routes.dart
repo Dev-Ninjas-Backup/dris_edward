@@ -1,3 +1,9 @@
+import 'package:dris_edward/features/Rider_flow/Request_screen/screen/request_screen.dart';
+import 'package:dris_edward/features/Rider_flow/notification/screen/notification_screen.dart';
+import 'package:dris_edward/features/Rider_flow/order_screen/screen/order_screen.dart';
+import 'package:dris_edward/features/Rider_flow/rider_account/screen/rider_account_screen.dart';
+import 'package:dris_edward/features/Rider_flow/rider_home/screen/rider_home_screen.dart';
+import 'package:dris_edward/features/Rider_flow/rider_bottom_navbar/screen/rider_bottom_navbar_screen.dart';
 import 'package:dris_edward/features/customer_flow/add_to_cart/screen/add_to_cart_screen.dart';
 import 'package:dris_edward/features/auth/create_new_password/screen/create_new_password_screen.dart';
 import 'package:dris_edward/features/auth/login/screen/login_screen.dart';
@@ -16,14 +22,15 @@ import 'package:dris_edward/features/customer_flow/product_details/screen/produc
 import 'package:dris_edward/features/customer_flow/profile_info/screen/profile_info_screen.dart';
 import 'package:dris_edward/features/customer_flow/revirew/screen/review_screen.dart';
 import 'package:dris_edward/features/customer_flow/select_resturant/screen/select_resturant_screen.dart';
-import 'package:dris_edward/home/screen/home_screen.dart';
+import 'package:dris_edward/features/customer_flow/home/screen/home_screen.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:dris_edward/features/splash/screen/splash_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/get.dart';
 
 class AppRoute {
-  //splash
+  
+  // Customer Flow
   static String splashScreen = '/splashScreen';
   static String onboarding = '/onboarding';
   static String onboarding4 = '/onboarding4';
@@ -45,6 +52,15 @@ class AppRoute {
   static String exploreMenuScreen = '/exploreMenuScreen';
   static String reviewScreen = '/reviewScreen';
 
+  // Rider Flow
+  static String riderBottomNavbar = '/riderBottomNavbar';
+  static String riderHomeScreen = '/riderHomeScreen';
+  static String requestScreen = '/requestScreen';
+  static String orderScreen = '/orderScreen';
+  static String notificationScreen = '/notificationScreen';
+  static String riderAccountScreen = '/riderAccountScreen';
+
+  // Customer Flow
   static String getSplashScreen() => splashScreen;
   static String getOnboarding() => onboarding;
   static String getOnboarding4() => onboarding4;
@@ -66,7 +82,16 @@ class AppRoute {
   static String getExploreMenuScreen() => exploreMenuScreen;
   static String getReviewScreen() => reviewScreen;
 
+  // Rider Flow
+  static String getRiderBottomNavbar() => riderBottomNavbar;
+  static String getRiderHomeScreen() => riderHomeScreen;
+  static String getRequestScreen() => requestScreen;
+  static String getOrderScreen() => orderScreen;
+  static String getNotificationScreen() => notificationScreen;
+  static String getRiderAccountScreen() => riderAccountScreen;
+
   static List<GetPage> routes = [
+    // Customer Flow
     GetPage(name: splashScreen, page: () => SplashScreen()),
     GetPage(name: onboarding, page: () => OnboardingScreen()),
     GetPage(name: onboarding4, page: () => Onboarding4()),
@@ -90,5 +115,13 @@ class AppRoute {
     GetPage(name: favoriteScreen, page: () => FavoriteScreen()),
     GetPage(name: exploreMenuScreen, page: () => ExploreMenuScreen()),
     GetPage(name: reviewScreen, page: () => ReviewScreen()),
+
+    // Rider Flow
+    GetPage(name: riderBottomNavbar, page: () => RiderBottomNavbar()),
+    GetPage(name: riderHomeScreen, page: () => RiderHomeScreen()),
+    GetPage(name: requestScreen, page: () => RequestScreen()),
+    GetPage(name: orderScreen, page: () => OrderScreen()),
+    GetPage(name: notificationScreen, page: () => NotificationScreen()),
+    GetPage(name: riderAccountScreen, page: () => RiderAccountScreen()),
   ];
 }
