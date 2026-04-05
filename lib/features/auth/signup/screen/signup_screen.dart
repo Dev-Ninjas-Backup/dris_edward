@@ -96,7 +96,7 @@ class SignupScreen extends StatelessWidget {
                   buttonText: 'Create account',
                   buttonColor: AppColors.buttonBackgroundColor,
                   onTap: () {
-                    // signupController.signup();
+                    Get.toNamed(AppRoute.riderBottomNavbar);
                   },
                 ),
                 const SizedBox(height: 40),
