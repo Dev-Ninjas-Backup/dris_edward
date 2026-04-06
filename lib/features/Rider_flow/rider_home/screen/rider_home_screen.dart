@@ -50,43 +50,6 @@ class RiderHomeScreen extends StatelessWidget {
                                     color: Colors.black87,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
-                                Obx(
-                                  () => Row(
-                                    children: [
-                                      Container(
-                                        width: 8,
-                                        height: 8,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color:
-                                              controller
-                                                  .userProfile
-                                                  .value
-                                                  .isOnline
-                                              ? const Color(0xFF22C55E)
-                                              : Colors.grey,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 6),
-                                      Text(
-                                        controller.userProfile.value.isOnline
-                                            ? 'Online'
-                                            : 'Offline',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color:
-                                              controller
-                                                  .userProfile
-                                                  .value
-                                                  .isOnline
-                                              ? const Color(0xFF22C55E)
-                                              : Colors.grey,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                               ],
                             ),
                             TextButton(
