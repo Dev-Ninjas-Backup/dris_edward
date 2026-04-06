@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:dris_edward/features/Rider_flow/rider_home/controller/rider_home_controller.dart';
 
 class OrderRequestCard extends StatelessWidget {
@@ -34,16 +35,23 @@ class OrderRequestCard extends StatelessWidget {
                   Column(
                     children: [
                       CircleAvatar(
-                        radius: 24,
+                        radius: 20,
                         backgroundImage: AssetImage(
                           controller.orderRequest.value.restaurantImage,
                         ),
                       ),
                       Expanded(
-                        child: CustomPaint(painter: DashedLinePainter()),
+                        child: Center(
+                          child: DottedBorder(
+                            color: Colors.grey.shade200,
+                            strokeWidth: 1,
+                            dashPattern: const [4, 3],
+                            child: const SizedBox(width: 1),
+                          ),
+                        ),
                       ),
                       CircleAvatar(
-                        radius: 24,
+                        radius: 20,
                         backgroundImage: AssetImage(
                           controller.orderRequest.value.driverImage,
                         ),
@@ -53,7 +61,7 @@ class OrderRequestCard extends StatelessWidget {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Flex(
                           direction: Axis.horizontal,
@@ -87,7 +95,20 @@ class OrderRequestCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 35),
+
+                        // Vertical Dotted Line implementation
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            top: 4,
+                            bottom: 4,
+                          ),
+                          child: SizedBox(
+                            height: 40, // Adjust height to control the gap
+                            child: CustomPaint(painter: DashedLinePainter()),
+                          ),
+                        ),
+
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -141,7 +162,7 @@ class OrderRequestCard extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 33),
             Flex(
               direction: Axis.horizontal,
               children: [
@@ -218,9 +239,9 @@ class OrderRequestCard extends StatelessWidget {
 class DashedLinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    double dashHeight = 5, dashSpace = 3, startY = 0;
+    double dashHeight = 4, dashSpace = 3, startY = 0;
     final paint = Paint()
-      ..color = Colors.grey.shade300
+      ..color = Colors.black
       ..strokeWidth = 1;
     while (startY < size.height) {
       canvas.drawLine(

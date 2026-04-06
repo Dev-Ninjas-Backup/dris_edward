@@ -17,14 +17,13 @@ class UserProfileHeader extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              radius: 30,
+              radius: 25,
               backgroundImage: AssetImage(
                 controller.userProfile.value.profileImage,
               ),
             ),
             const SizedBox(width: 12),
 
-            // Name and Join Date
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +68,6 @@ class UserProfileHeader extends StatelessWidget {
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Text Label
                     Center(
                       child: Text(
                         controller.userProfile.value.isOnline
@@ -84,7 +82,6 @@ class UserProfileHeader extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // Sliding Circle
                     AnimatedAlign(
                       duration: const Duration(milliseconds: 300),
                       alignment: controller.userProfile.value.isOnline
