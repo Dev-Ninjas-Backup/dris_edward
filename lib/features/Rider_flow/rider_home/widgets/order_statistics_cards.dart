@@ -1,39 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:dris_edward/features/Rider_flow/rider_home/controller/rider_home_controller.dart';
 
 class OrderStatisticsCards extends StatelessWidget {
-  const OrderStatisticsCards({super.key});
+  final RiderHomeController controller;
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Flex(
-        direction: Axis.horizontal,
-        children: [
-          Expanded(
-            child: _StatisticCard(value: '3', label: 'Today’s\nOrder'),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: _StatisticCard(value: '14', label: 'This Week\nOrder'),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: _StatisticCard(value: '36', label: 'Total\nOrder'),
-          ),
-        ],
-      ),
-    );
-  }
-}
+  const OrderStatisticsCards({super.key, required this.controller});
 
-class _StatisticCard extends StatelessWidget {
-  final String value;
-  final String label;
-
-  const _StatisticCard({required this.value, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildCard(String value, String label) {
     return Container(
       height: 120,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
@@ -42,7 +16,8 @@ class _StatisticCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(
+                alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -69,6 +44,37 @@ class _StatisticCard extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: Color(0xFF4C5968),
               height: 1.2,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+      () => Flex(
+        direction: Axis.horizontal,
+        children: [
+          Expanded(
+            child: _buildCard(
+              controller.orderStatistics.value.statistics[0].value,
+              controller.orderStatistics.value.statistics[0].label,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: _buildCard(
+              controller.orderStatistics.value.statistics[1].value,
+              controller.orderStatistics.value.statistics[1].label,
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: _buildCard(
+              controller.orderStatistics.value.statistics[2].value,
+              controller.orderStatistics.value.statistics[2].label,
             ),
           ),
         ],

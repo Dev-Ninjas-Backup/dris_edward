@@ -65,9 +65,7 @@ class ProfileInfoController extends GetxController {
       return;
     }
 
-    // TODO: Call API to save profile changes
-    // Example: await profileService.updateProfile(...)
-
+  
     isLoading.value = false;
     Get.snackbar(
       'Success',
@@ -95,7 +93,6 @@ class ProfileInfoController extends GetxController {
           TextButton(onPressed: () => Get.back(), child: const Text('Cancel')),
           TextButton(
             onPressed: () {
-              // TODO: Call API to delete account
               Get.back(); // Close dialog
               Get.offAllNamed(AppRoute.loginScreen); // Navigate to login
             },
