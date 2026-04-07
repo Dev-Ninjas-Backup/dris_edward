@@ -4,6 +4,7 @@ import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/Rider_flow/order_screen/widgets/payment_method_card.dart';
 import 'package:dris_edward/features/Rider_flow/order_screen/widgets/restaurant_detail_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -78,7 +79,8 @@ class OrderScreen extends StatelessWidget {
                               methodName: 'Cash',
                               iconPath: Iconpath.cashIcon,
                               onTap: () {
-                                // TODO: Add payment method selection logic
+                                // Navigate to OrderScreen
+                                Get.to(() => const OrderScreen());
                               },
                             ),
                           ],

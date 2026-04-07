@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dris_edward/features/Rider_flow/request_screen/controller/request_controller.dart';
 import 'package:dris_edward/features/Rider_flow/request_screen/model/request_model.dart';
+import 'package:dris_edward/features/Rider_flow/order_screen/screen/order_screen.dart';
 
 class OrderRequestsList extends StatelessWidget {
   final RequestController controller;
@@ -63,21 +64,26 @@ class OrderRequestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Obx(
+    return GestureDetector(
+      onTap: () {
+        // Navigate to OrderScreen when card is tapped
+        Get.to(() => const OrderScreen());
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Obx(
         () => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -273,6 +279,7 @@ class OrderRequestCard extends StatelessWidget {
               ],
             ),
           ],
+        ),
         ),
       ),
     );
