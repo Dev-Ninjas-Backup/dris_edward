@@ -1,11 +1,17 @@
 import 'package:dris_edward/core/common/style/global_text_style.dart';
+import 'package:dris_edward/features/Rider_flow/request_screen/widgets/order_request.dart';
+import 'package:dris_edward/features/Rider_flow/request_screen/controller/request_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RequestScreen extends StatelessWidget {
   const RequestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the controller
+    final RequestController controller = Get.put(RequestController());
+
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -31,16 +37,22 @@ class RequestScreen extends StatelessWidget {
                         title: Text(
                           'Order Request',
                           style: getHeadingTextStyle(
-                            fontsize: 24,
-                            fontweight: FontWeight.w700,
+                            fontsize: 20,
                           ).copyWith(color: Colors.black),
                         ),
                         centerTitle: true,
                       ),
+
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Column(children: [
-                            
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 40),
+                            OrderRequestsList(controller: controller),
+                            const SizedBox(height: 22),
+                            OrderRequestsList(controller: controller),
+                            const SizedBox(height: 22),
+                            OrderRequestsList(controller: controller),
                           ],
                         ),
                       ),

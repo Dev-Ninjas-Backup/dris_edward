@@ -39,7 +39,11 @@ class UserProfileHeader extends StatelessWidget {
                   ),
                   Text(
                     controller.userProfile.value.joinDate,
-                    style: TextStyle(fontSize: 10, color: Colors.black54),
+                    style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
               ),
