@@ -9,7 +9,6 @@ class RequestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize the controller
     final RequestController controller = Get.put(RequestController());
 
     return Container(
