@@ -91,8 +91,8 @@ class OrderRequestModel {
       pickupLocationName: 'Pickup form',
       deliveryLocation: '58.447132, -101.69, Canada',
       deliveryDistance: '4 Km away',
-      restaurantImage: 'assets/images/profile_image.png',
-      driverImage: 'assets/images/profile_image.png',
+      restaurantImage: 'assets/images/customer_2.png',
+      driverImage: 'assets/images/customer_1.png',
     );
   }
 }
