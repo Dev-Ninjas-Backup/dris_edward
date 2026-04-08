@@ -1,100 +1,89 @@
-// import 'package:flutter/material.dart';
-// import 'package:dris_edward/core/common/style/global_text_style.dart';
+import 'package:flutter/material.dart';
 
-// class NotificationCard extends StatelessWidget {
-//   final String title;
-//   final String subtitle;
-//   final String timeAgo;
-//   final String iconPath;
+class NotificationCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String timeAgo;
+  final String iconPath;
 
-//   const NotificationCard({
-//     super.key,
-//     required this.title,
-//     required this.subtitle,
-//     required this.timeAgo,
-//     required this.iconPath,
-//   });
+  const NotificationCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.timeAgo,
+    required this.iconPath,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: const EdgeInsets.all(12),
-//       decoration: BoxDecoration(
-//         color: Colors.white,
-//         borderRadius: BorderRadius.circular(8),
-//         boxShadow: [
-//           BoxShadow(
-//             color: Colors.black.withValues(alpha: 0.1),
-//             blurRadius: 4,
-//             offset: const Offset(0, 2),
-//           ),
-//         ],
-//       ),
-//       child: Row(
-//         children: [
-//           // Icon Container
-//           Container(
-//             width: 50,
-//             height: 50,
-//             decoration: BoxDecoration(
-//               color: const Color(0xFFF5F5F5),
-//               borderRadius: BorderRadius.circular(8),
-//             ),
-//             child: Center(
-//               child: Image.asset(
-//                 iconPath,
-//                 width: 28,
-//                 height: 28,
-//                 fit: BoxFit.contain,
-//               ),
-//             ),
-//           ),
-//           const SizedBox(width: 12),
-//           // Text Content
-//           Expanded(
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(
-//                   title,
-//                   style: getNormalTextStyle(
-//                     fontsize: 14,
-//                     fontweight: FontWeight.w600,
-//                   ).copyWith(color: Colors.black),
-//                   maxLines: 1,
-//                   overflow: TextOverflow.ellipsis,
-//                 ),
-//                 const SizedBox(height: 4),
-//                 Text(
-//                   subtitle,
-//                   style: getNormalTextStyle(
-//                     fontsize: 12,
-//                     fontweight: FontWeight.w400,
-//                   ).copyWith(color: Colors.black54),
-//                   maxLines: 2,
-//                   overflow: TextOverflow.ellipsis,
-//                 ),
-//               ],
-//             ),
-//           ),
-//           const SizedBox(width: 8),
-//           // Time Badge
-//           Container(
-//             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-//             decoration: BoxDecoration(
-//               color: const Color(0xFFE8F5E9),
-//               borderRadius: BorderRadius.circular(12),
-//             ),
-//             child: Text(
-//               timeAgo,
-//               style: getNormalTextStyle(
-//                 fontsize: 11,
-//                 fontweight: FontWeight.w500,
-//               ).copyWith(color: const Color(0xFF54A312)),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Flex(
+        direction: Axis.horizontal,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Color(0xFFF1F8F1),
+              shape: BoxShape.circle,
+            ),
+            child: Image.asset(
+              iconPath,
+              width: 24,
+              height: 24,
+              errorBuilder: (context, error, stackTrace) =>
+                  const Icon(Icons.fastfood, color: Color(0xFF53B453)),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF666666),
+                    height: 1.3,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  timeAgo,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

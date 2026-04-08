@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class NotificationToggle extends StatefulWidget {
   final Function(bool isNew)? onChanged;
 
@@ -26,7 +27,9 @@ class _NotificationToggleState extends State<NotificationToggle> {
               duration: const Duration(milliseconds: 200),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: isNewSelected ? const Color(0xFF2E5A27) : Colors.transparent,
+                color: isNewSelected
+                    ? const Color(0xFF2E5A27)
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -50,7 +53,9 @@ class _NotificationToggleState extends State<NotificationToggle> {
               duration: const Duration(milliseconds: 200),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: !isNewSelected ? const Color(0xFF2E5A27) : Colors.transparent,
+                color: !isNewSelected
+                    ? const Color(0xFF2E5A27)
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
