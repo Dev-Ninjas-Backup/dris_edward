@@ -21,6 +21,8 @@ class Iconpath {
   static String deleteIcon = 'assets/icons/delete_icon.png';
   static String cashIcon = 'assets/icons/cash.png';
   static String burgerIcon = 'assets/icons/burger.png';
+  static String pen = 'assets/icons/pen.png';
 
 
 }
+  
