@@ -1,5 +1,6 @@
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
+import 'package:dris_edward/routes/app_routes.dart';
 import 'package:dris_edward/features/Rider_flow/rider_account/controller/reider_account_controller.dart';
 import 'package:dris_edward/features/Rider_flow/rider_account/widgets/custom_switch_row.dart';
 import 'package:dris_edward/features/Rider_flow/rider_account/widgets/stat_card.dart';
@@ -123,7 +124,7 @@ class RiderAccountScreen extends StatelessWidget {
                   iconPath: Iconpath.pen,
                   showToggle: false,
                   onTap: () {
-                    controller.editProfile();
+                    Get.toNamed(AppRoute.riderProfileScreen);
                   },
                 ),
               ),
@@ -165,17 +166,6 @@ class RiderAccountScreen extends StatelessWidget {
                     },
                     onTap: () {},
                   ),
-                ),
-              ),
-              const SizedBox(height: 14),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: CustomSettingTile(
-                  title: 'Change Password',
-                  iconPath: '',
-                  icon: Icons.lock,
-                  showToggle: false,
-                  onTap: () {},
                 ),
               ),
               const SizedBox(height: 34),
