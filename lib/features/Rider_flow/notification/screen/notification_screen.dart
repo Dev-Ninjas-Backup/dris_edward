@@ -1,6 +1,5 @@
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/Rider_flow/notification/widgets/notification_toggle.dart';
-import 'package:dris_edward/features/Rider_flow/request_screen/model/request_model.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -43,7 +42,7 @@ class NotificationScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: const Color(0xFF2E5A27).withOpacity(0.5),
+                      color: const Color(0xFF2E5A27).withValues(alpha: .5),
                     ),
                   ),
                   child: const NotificationToggle(),
