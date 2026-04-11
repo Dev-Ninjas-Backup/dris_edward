@@ -1,8 +1,14 @@
+import 'package:dris_edward/features/Rider_flow/rider_home/widgets/order_request_card.dart';
+import 'package:dris_edward/features/Rider_flow/rider_home/widgets/order_statistics_cards.dart';
 import 'package:dris_edward/features/Rider_flow/rider_home/widgets/user_profile_header.dart';
+import 'package:dris_edward/features/Rider_flow/rider_home/controller/rider_home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RiderHomeScreen extends StatelessWidget {
-  const RiderHomeScreen({super.key});
+  RiderHomeScreen({super.key});
+
+  final controller = Get.put(RiderHomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +23,57 @@ class RiderHomeScreen extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              children: [
-                const SizedBox(height: 70),
-                UserProfileHeader(
-                  name: 'John Doe',
-                  joinedDate: '2022-01-01',
-                  isOnline: true,
-                  onToggleOnline: (value) {},
+        body: Obx(
+          () => controller.isLoading.value
+              ? const Center(child: CircularProgressIndicator())
+              : SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 70),
+                        UserProfileHeader(controller: controller),
+                        const SizedBox(height: 50),
+                        OrderStatisticsCards(controller: controller),
+                        const SizedBox(height: 35),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Recent Orders',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            TextButton(
+                              onPressed: () => controller.viewAllOrders(),
+                              child: const Text(
+                                'View All',
+                                style: TextStyle(
+                                  color: Color(0xFF53B453),
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                        OrderRequestCard(controller: controller),
+                        const SizedBox(height: 16),
+                        OrderRequestCard(controller: controller),
+                        const SizedBox(height: 16),
+                        OrderRequestCard(controller: controller),
+                      ],
+                    ),
+                  ),
                 ),
-              ],
-            ),
-          ),
         ),
       ),
     );

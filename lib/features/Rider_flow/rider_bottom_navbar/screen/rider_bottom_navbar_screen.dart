@@ -3,10 +3,10 @@ import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
 import 'package:dris_edward/features/Rider_flow/Request_screen/screen/request_screen.dart';
 import 'package:dris_edward/features/Rider_flow/notification/screen/notification_screen.dart';
-import 'package:dris_edward/features/Rider_flow/order_screen/screen/order_screen.dart';
 import 'package:dris_edward/features/Rider_flow/rider_account/screen/rider_account_screen.dart';
 import 'package:dris_edward/features/Rider_flow/rider_bottom_navbar/controller/rider_bottom_navbar_controller.dart';
 import 'package:dris_edward/features/Rider_flow/rider_home/screen/rider_home_screen.dart';
+import 'package:dris_edward/features/Rider_flow/running_orders/screen/running_orders_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class RiderBottomNavbar extends StatelessWidget {
     final List<Widget> pages = [
       RiderHomeScreen(),
       RequestScreen(),
-      OrderScreen(),
+      RunningOrdersScreen(),
       NotificationScreen(),
       RiderAccountScreen(),
     ];

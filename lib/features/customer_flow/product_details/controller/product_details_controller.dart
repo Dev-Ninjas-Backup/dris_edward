@@ -130,6 +130,5 @@ class ProductDetailsController extends GetxController {
   }
 
   void addToCart() {
-    // TODO: Implement add to cart functionality
   }
 }

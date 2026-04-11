@@ -11,4 +11,5 @@ class AppColors {
   static final progressExcellent = Color(0xFF22C55E);
   static final progressGood = Color(0xFFB8DE68);
   static final progressAverage = Color(0xFFF5A51E);
+  static final activeStatus = Color(0xFF54A312);
 }

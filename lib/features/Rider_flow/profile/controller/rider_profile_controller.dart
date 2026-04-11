@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class ProfileInfoController extends GetxController {
+class RiderProfileController extends GetxController {
   // Text controllers for form fields
   late TextEditingController fullNameController;
   late TextEditingController phoneNumberController;
@@ -25,11 +25,11 @@ class ProfileInfoController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // Initialize controllers with existing user data
-    fullNameController = TextEditingController(text: 'Nicolas chakma');
-    phoneNumberController = TextEditingController(text: '+1 (555) 123-4567');
-    addressController = TextEditingController(text: 'Dhanmondi central road');
-    emailController = TextEditingController(text: 'nicoaschakma344@gmail.com');
+    // Initialize controllers with existing rider data
+    fullNameController = TextEditingController(text: 'Rider Name');
+    phoneNumberController = TextEditingController(text: '+1 (555) 987-6543');
+    addressController = TextEditingController(text: 'Dhaka, Bangladesh');
+    emailController = TextEditingController(text: 'rider@example.com');
     currentPasswordController = TextEditingController();
     newPasswordController = TextEditingController();
   }
@@ -65,7 +65,6 @@ class ProfileInfoController extends GetxController {
       return;
     }
 
-  
     isLoading.value = false;
     Get.snackbar(
       'Success',

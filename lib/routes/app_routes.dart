@@ -23,13 +23,13 @@ import 'package:dris_edward/features/customer_flow/profile_info/screen/profile_i
 import 'package:dris_edward/features/customer_flow/revirew/screen/review_screen.dart';
 import 'package:dris_edward/features/customer_flow/select_resturant/screen/select_resturant_screen.dart';
 import 'package:dris_edward/features/customer_flow/home/screen/home_screen.dart';
+import 'package:dris_edward/features/Rider_flow/profile/screen/rider_profile_screen.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:dris_edward/features/splash/screen/splash_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:get/get.dart';
 
 class AppRoute {
-  
   // Customer Flow
   static String splashScreen = '/splashScreen';
   static String onboarding = '/onboarding';
@@ -59,6 +59,7 @@ class AppRoute {
   static String orderScreen = '/orderScreen';
   static String notificationScreen = '/notificationScreen';
   static String riderAccountScreen = '/riderAccountScreen';
+  static String riderProfileScreen = '/riderProfileScreen';
 
   // Customer Flow
   static String getSplashScreen() => splashScreen;
@@ -89,7 +90,7 @@ class AppRoute {
   static String getOrderScreen() => orderScreen;
   static String getNotificationScreen() => notificationScreen;
   static String getRiderAccountScreen() => riderAccountScreen;
-
+  static String getRiderProfileScreen() => riderProfileScreen;
   static List<GetPage> routes = [
     // Customer Flow
     GetPage(name: splashScreen, page: () => SplashScreen()),
@@ -123,5 +124,6 @@ class AppRoute {
     GetPage(name: orderScreen, page: () => OrderScreen()),
     GetPage(name: notificationScreen, page: () => NotificationScreen()),
     GetPage(name: riderAccountScreen, page: () => RiderAccountScreen()),
+    GetPage(name: riderProfileScreen, page: () => RiderProfileScreen()),
   ];
 }
