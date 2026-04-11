@@ -1,6 +1,8 @@
 import 'package:dris_edward/core/common/constants/iconpath.dart';
 import 'package:dris_edward/core/common/constants/imagepath.dart';
 import 'package:dris_edward/core/common/style/global_text_style.dart';
+import 'package:dris_edward/features/Rider_flow/order_screen/controller/order_controller.dart';
+import 'package:dris_edward/features/Rider_flow/order_screen/widgets/note_history_section.dart';
 import 'package:dris_edward/features/Rider_flow/order_screen/widgets/payment_method_card.dart';
 import 'package:dris_edward/features/Rider_flow/order_screen/widgets/restaurant_detail_card.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,9 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize the OrderController
+    final orderController = Get.put(OrderController());
+
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -79,10 +84,11 @@ class OrderScreen extends StatelessWidget {
                               methodName: 'Cash',
                               iconPath: Iconpath.cashIcon,
                               onTap: () {
-                                // Navigate to OrderScreen
                                 Get.to(() => const OrderScreen());
                               },
                             ),
+                            const SizedBox(height: 20),
+                            NoteHistorySection(controller: orderController),
                           ],
                         ),
                       ),
