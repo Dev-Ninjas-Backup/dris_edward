@@ -20,7 +20,7 @@ class SplashController extends GetxController {
         progressIndex.value++;
       } else {
         timer.cancel();
-        Get.offAllNamed(AppRoute.onboarding);
+        Get.offAllNamed(AppRoute.signupScreen);
       }
     });
   }
