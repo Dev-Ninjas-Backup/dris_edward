@@ -139,8 +139,4 @@ class RunningOrderController extends GetxController {
     successMessage.value = '';
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

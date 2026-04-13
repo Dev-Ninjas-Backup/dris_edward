@@ -6,8 +6,7 @@ import 'package:dris_edward/features/Rider_flow/order_screen/model/note_model.da
 class NoteHistorySection extends StatelessWidget {
   final OrderController? controller;
 
-  const NoteHistorySection({super.key, OrderController? controller})
-    : controller = controller;
+  const NoteHistorySection({super.key, this.controller});
 
   @override
   Widget build(BuildContext context) {
