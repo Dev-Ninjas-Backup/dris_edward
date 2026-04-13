@@ -23,57 +23,53 @@ class RiderHomeScreen extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Obx(
-          () => controller.isLoading.value
-              ? const Center(child: CircularProgressIndicator())
-              : SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 70),
+                UserProfileHeader(controller: controller),
+                const SizedBox(height: 50),
+                OrderStatisticsCards(controller: controller),
+                const SizedBox(height: 35),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 70),
-                        UserProfileHeader(controller: controller),
-                        const SizedBox(height: 50),
-                        OrderStatisticsCards(controller: controller),
-                        const SizedBox(height: 35),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Recent Orders',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black87,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            TextButton(
-                              onPressed: () => controller.viewAllOrders(),
-                              child: const Text(
-                                'View All',
-                                style: TextStyle(
-                                  color: Color(0xFF53B453),
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ),
-                          ],
+                        Text(
+                          'Recent Orders',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black87,
+                          ),
                         ),
-                        const SizedBox(height: 16),
-                        OrderRequestCard(controller: controller),
-                        const SizedBox(height: 16),
-                        OrderRequestCard(controller: controller),
-                        const SizedBox(height: 16),
-                        OrderRequestCard(controller: controller),
                       ],
                     ),
-                  ),
+                    TextButton(
+                      onPressed: () => controller.viewAllOrders(),
+                      child: const Text(
+                        'View All',
+                        style: TextStyle(
+                          color: Color(0xFF53B453),
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+                const SizedBox(height: 16),
+                OrderRequestCard(controller: controller),
+                const SizedBox(height: 16),
+                OrderRequestCard(controller: controller),
+                const SizedBox(height: 16),
+                OrderRequestCard(controller: controller),
+              ],
+            ),
+          ),
         ),
       ),
     );

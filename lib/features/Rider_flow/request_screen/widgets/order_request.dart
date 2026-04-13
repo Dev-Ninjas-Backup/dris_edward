@@ -12,15 +12,6 @@ class OrderRequestsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (controller.isLoading.value) {
-        return const Center(
-          child: Padding(
-            padding: EdgeInsets.all(32.0),
-            child: CircularProgressIndicator(),
-          ),
-        );
-      }
-
       if (controller.errorMessage.value.isNotEmpty) {
         return Center(
           child: Padding(
@@ -32,10 +23,6 @@ class OrderRequestsList extends StatelessWidget {
             ),
           ),
         );
-      }
-
-      if (controller.orderRequests.value.isEmpty) {
-        return const Center(child: Text('No order requests available'));
       }
 
       // Display list of orders
@@ -83,8 +70,7 @@ class OrderRequestCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Obx(
-        () => Column(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             IntrinsicHeight(
@@ -230,11 +216,9 @@ class OrderRequestCard extends StatelessWidget {
                   ),
                 ),
                 OutlinedButton(
-                  onPressed: controller.isLoading.value
-                      ? null
-                      : () {
-                          controller.rejectOrder(order.id ?? '');
-                        },
+                  onPressed: () {
+                    controller.rejectOrder(order.id ?? '');
+                  },
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,
@@ -245,18 +229,16 @@ class OrderRequestCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text(
-                    controller.isLoading.value ? 'Loading...' : 'Ignore',
-                    style: const TextStyle(color: Colors.black87, fontSize: 15),
+                  child: const Text(
+                    'Ignore',
+                    style: TextStyle(color: Colors.black87, fontSize: 15),
                   ),
                 ),
                 const SizedBox(width: 12),
                 ElevatedButton(
-                  onPressed: controller.isLoading.value
-                      ? null
-                      : () {
-                          controller.acceptOrder(order.id ?? '');
-                        },
+                  onPressed: () {
+                    controller.acceptOrder(order.id ?? '');
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF2E5A27),
                     padding: const EdgeInsets.symmetric(
@@ -267,9 +249,9 @@ class OrderRequestCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text(
-                    controller.isLoading.value ? 'Loading...' : 'Accept',
-                    style: const TextStyle(
+                  child: const Text(
+                    'Accept',
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -279,7 +261,6 @@ class OrderRequestCard extends StatelessWidget {
               ],
             ),
           ],
-        ),
         ),
       ),
     );

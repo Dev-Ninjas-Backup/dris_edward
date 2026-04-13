@@ -19,14 +19,12 @@ class RequestController extends GetxController {
   /// Replace this with your actual API call
   Future<void> loadOrderRequests() async {
     try {
-      isLoading(true);
       errorMessage('');
 
       // TODO: Replace with actual API call
       // var response = await apiService.getOrderRequests();
 
       // Mock data for now
-      await Future.delayed(const Duration(seconds: 1)); // Simulate API delay
 
       List<OrderRequest> mockOrders = [
         OrderRequest(
@@ -48,8 +46,6 @@ class RequestController extends GetxController {
       successMessage('Orders loaded successfully');
     } catch (e) {
       errorMessage('Failed to load orders: ${e.toString()}');
-    } finally {
-      isLoading(false);
     }
   }
 
@@ -61,13 +57,10 @@ class RequestController extends GetxController {
   /// Accept an order request
   Future<void> acceptOrder(String orderId) async {
     try {
-      isLoading(true);
       errorMessage('');
 
       // TODO: Replace with actual API call
       // var response = await apiService.acceptOrder(orderId);
-
-      await Future.delayed(const Duration(seconds: 1)); // Simulate API delay
 
       // Update the order status in the list
       final updatedOrders = orderRequests.value.map((order) {
@@ -81,21 +74,16 @@ class RequestController extends GetxController {
       successMessage('Order accepted successfully');
     } catch (e) {
       errorMessage('Failed to accept order: ${e.toString()}');
-    } finally {
-      isLoading(false);
     }
   }
 
   /// Reject an order request
   Future<void> rejectOrder(String orderId) async {
     try {
-      isLoading(true);
       errorMessage('');
 
       // TODO: Replace with actual API call
       // var response = await apiService.rejectOrder(orderId);
-
-      await Future.delayed(const Duration(seconds: 1)); // Simulate API delay
 
       // Remove the order from the list or update status
       final updatedOrders = orderRequests.value
@@ -106,8 +94,6 @@ class RequestController extends GetxController {
       successMessage('Order rejected');
     } catch (e) {
       errorMessage('Failed to reject order: ${e.toString()}');
-    } finally {
-      isLoading(false);
     }
   }
 
